@@ -35,11 +35,11 @@ setupJS <- function(jsFuncs, script, text, ...) {
   shinyjsContent <-
     shiny::singleton(
       insertHead(
-        # add the message handlers
-        shiny::tags$script(shiny::HTML(controllers)),
         # add the actual javascript code
         shinyjsInlcudeScript(script),
         shinyjsInlineScript(text),
+        # add the message handlers
+        shiny::tags$script(shiny::HTML(controllers)),
         # add any extra tags
         ...
       )
